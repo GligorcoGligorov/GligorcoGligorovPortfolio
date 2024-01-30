@@ -121,6 +121,7 @@ html { scroll-behavior: smooth; }
   flex-direction: row;
   justify-content: space-between;
 }
+
 .nameG{
   font-size: 1.5rem;
   color: #f97a25;
@@ -159,6 +160,7 @@ html { scroll-behavior: smooth; }
 .c2{
   display: flex;
   flex-direction: row;
+  gap: 2rem;
   justify-content: space-around;
   margin: 8% 0%;
 }
@@ -210,10 +212,6 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
 }
 
-.ex .experienceTitle, .ex .tSkills, .aw .experienceTitle, .aw .tSkills{
-  margin-left: 2%;
-
-}
 .experienceTitle{
   color:#f97a25;
   text-align: center;
@@ -280,7 +278,7 @@ html { scroll-behavior: smooth; }
 }
 
 .social-footer {
-  padding: 1rem;
+  /* padding: 1rem; */
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
@@ -354,4 +352,69 @@ html { scroll-behavior: smooth; }
 #projectViewLink{
   display: block;
   width: 100%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .c1 {
+    flex-direction: column-reverse;
+  }
+
+  .nameG {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: right;
+  }
+
+  .me{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #portret{
+    width: 50%;
+    height: auto;
+  }
+
+  .details{
+    /* background-color: rgba(128, 128, 128, 0.248); */
+    padding: 0.7rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .details h3{
+    text-align: center;
+    font-size: 16px;
+  }
+  .details h1{
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .c2{
+    margin-block: 3rem;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .social-footer {
+    padding: 0;
+  }
+
+  .textFooter {
+    text-align: center;
+  }
+  
+  .social-footer .social-footer-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
