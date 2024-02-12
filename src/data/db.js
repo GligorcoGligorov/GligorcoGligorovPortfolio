@@ -16,10 +16,10 @@ export default {
       },
       {
         "id": "3",
-        "title": "ConcertTickets",
-        "body": "A Web Application for selling movie tickets using Onion Architecture",
+        "title": "Ecommerce Application",
+        "body": "A Web Application for booking movies in the cinema",
         "ProgramingLanguage": "C#",
-        "link": "https://github.com/GligorcoGligorov/ConcertTickets"
+        "link": "https://github.com/GligorcoGligorov/complete-ecommerce-aspnet-mvc-application"
       },
       {
         "title": "Up-Time",
