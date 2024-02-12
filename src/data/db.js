@@ -2,13 +2,20 @@ export default {
     "projects": [
       {
         "id": "1",
+        "title": "Concert Tickets App",
+        "ProgramingLanguage": "C#",
+        "body": "Web application for selling movie tickets using Onion Architecture with .Net.",
+        "link": "https://github.com/GligorcoGligorov/ConcertTickets"
+      },
+      {
+        "id": "2",
         "title": "Parking App",
         "ProgramingLanguage": "Flutter",
         "body": "Crowdsourced mobile application to find parking for users.",
         "link": "https://github.com/andrejdaskalov/parkingapp-mobile"
       },
       {
-        "id": "2",
+        "id": "3",
         "title": "ConcertTickets",
         "body": "A Web Application for selling movie tickets using Onion Architecture",
         "ProgramingLanguage": "C#",
@@ -19,28 +26,28 @@ export default {
         "ProgramingLanguage": "Vue.js + Vercel",
         "body": "Application for checking the availability/up-time of services mobile and web",
         "link": "https://uptime-pearl.vercel.app",
-        "id": "3"
+        "id": "4"
       },
       {
         "title": "Tinex Store Chain",
         "ProgramingLanguage": " Java Spring Boot + PostgreSql",
         "body": "In-store product management and procurement and delivery of new products",
         "link": "https://github.com/GligorcoGligorov/Tinex-Store-Chain",
-        "id": "4"
+        "id": "5"
       },
       {
         "title": "Book App",
         "ProgramingLanguage": "Java Spring Boot + ReactJS",
         "body": "lorem ipsum...",
         "link": "https://github.com/GligorcoGligorov/Book-Application",
-        "id": "5"
+        "id": "6"
       },
       {
         "title": "Tank TroublESS",
         "ProgramingLanguage": "Windows Forms + .NET",
         "body": "The game is played with 2 players. They move through a maze, where they have to cleverly use the walls to hide from the enemy tank's bullets while managing to hit the enemy tank with their bullets",
         "link": "https://github.com/GligorcoGligorov/TankTroublESS",
-        "id": "6"
+        "id": "7"
       }
       
     ],
