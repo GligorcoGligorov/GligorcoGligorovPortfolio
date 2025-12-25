@@ -5,6 +5,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isLoaded, setIsLoaded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -38,6 +39,11 @@ function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const projects = [
@@ -118,7 +124,20 @@ function App() {
           <div className="nav-logo">
             <span className="logo-text">GG</span>
           </div>
-          <ul className="nav-menu">
+          
+          {/* Hamburger Menu Button */}
+          <button 
+            className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Navigation Menu */}
+          <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
             {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
               <li key={item}>
                 <button
@@ -132,6 +151,14 @@ function App() {
           </ul>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-menu-overlay" 
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
 
       {/* Hero Section */}
       <section id="hero" className="hero">
@@ -381,7 +408,7 @@ function App() {
               <a href="https://github.com/GligorcoGligorov" target="_blank" rel="noopener noreferrer" className="social-link">
                 GitHub
               </a>
-              <a href="https://www.linkedin.com/in/gligorco-gligorov-11b282289/" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://linkedin.com/in/gligorco-gligorov" target="_blank" rel="noopener noreferrer" className="social-link">
                 LinkedIn
               </a>
             </div>
