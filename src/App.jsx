@@ -408,7 +408,7 @@ function App() {
               <a href="https://github.com/GligorcoGligorov" target="_blank" rel="noopener noreferrer" className="social-link">
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/gligorco-gligorov" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://linkedin.com/in/gligorco-gligorov-11b282289" target="_blank" rel="noopener noreferrer" className="social-link">
                 LinkedIn
               </a>
             </div>
