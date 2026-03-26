@@ -48,11 +48,25 @@ function App() {
 
   const projects = [
     {
+      title: "MediTrack",
+      role: "Mobile Development",
+      period: "2026",
+      description: "Full-stack healthcare medication reminder app built with React Native and Expo. Features user authentication, medication CRUD, daily taken/skipped tracking, streak counter, push notifications, and dark mode.",
+      tech: ["React Native", "Expo", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-notifications"],
+      achievements: [
+        "Full auth flow with Supabase + SecureStore session management",
+        "Daily medication tracking with streak counter",
+        "Push notifications via expo-notifications"
+      ],
+      link: "https://github.com/GligorcoGligorov/MediTrack",
+      github: true
+    },
+    {
       title: "BrandsGateway E-commerce Platform",
       role: "Full-Stack Developer",
-      period: "April 2024 - Present",
+      period: "April 2023 - Present",
       description: "Enterprise B2B e-commerce platform managing 15+ international vendor integrations across Europe. Automated product synchronization processing 10,000+ products daily.",
-      tech: ["PHP", "Laravel", "WordPress", "WooCommerce", "Node-RED", "MySQL", "AWS"],
+      tech: ["PHP", "Laravel", "WordPress", "WooCommerce", "Node-RED", "MySQL", "AWS", "GPT-4"],
       achievements: [
         "95% reduction in manual data entry",
         "99.5% system uptime",
@@ -99,12 +113,12 @@ function App() {
   ];
 
   const skills = {
+    "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
+    "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
     "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js"],
-    "Frontend": ["React.js", "Vue.js", "JavaScript", "HTML5", "CSS3"],
-    "E-commerce": ["WordPress", "WooCommerce", "OpenCart", "Mirakl"],
-    "API & Integration": ["REST API", "Third-party Integration", "Webhooks"],
-    "Databases": ["MySQL", "PostgreSQL", "SQLite"],
-    "DevOps": ["Git", "GitHub", "AWS", "Node-RED", "Graylog"]
+    "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase"],
+    "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Cursor", "Claude Code", "AWS"],
+    "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
   };
 
   return (
@@ -125,7 +139,6 @@ function App() {
             <span className="logo-text">GG</span>
           </div>
           
-          {/* Hamburger Menu Button */}
           <button 
             className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
@@ -136,7 +149,6 @@ function App() {
             <span></span>
           </button>
 
-          {/* Navigation Menu */}
           <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
             {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
               <li key={item}>
@@ -152,7 +164,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div 
           className="mobile-menu-overlay" 
@@ -168,10 +179,10 @@ function App() {
               <span className="title-line">Hi, I'm</span>
               <span className="title-name">Gligorco Gligorov</span>
             </h1>
-            <h2 className="hero-subtitle">Backend Developer & Software Engineer</h2>
+            <h2 className="hero-subtitle">Full-Stack Developer & Mobile Engineer</h2>
             <p className="hero-description">
-              I build scalable B2B e-commerce solutions and enterprise-level applications.
-              Specializing in WordPress/WooCommerce, API integrations, and process automation.
+              I build scalable B2B e-commerce platforms, React Native mobile apps, and AI-powered automation systems.
+              Leveraging modern tools like Cursor and Claude to ship faster without sacrificing quality.
             </p>
             <div className="hero-cta">
               <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
@@ -190,30 +201,26 @@ function App() {
                   <span className="dot yellow"></span>
                   <span className="dot green"></span>
                 </div>
-                <span className="window-title">developer.php</span>
+                <span className="window-title">developer.ts</span>
               </div>
               <div className="window-content">
-                <pre><code>{`class Developer {
-  public function __construct() {
-    $this->name = "Gligorco Gligorov";
-    $this->role = "Backend Developer";
-    $this->location = "Skopje, Macedonia";
-  }
+                <pre><code>{`const developer = {
+  name: "Gligorco Gligorov",
+  role: "Full-Stack Developer",
+  location: "Skopje, Macedonia",
 
-  public function getSpecialties() {
-    return [
-      'PHP & Laravel',
-      'WordPress/WooCommerce',
-      'API Integrations',
-      'Process Automation',
-      'E-commerce Solutions'
-    ];
-  }
+  stack: {
+    mobile: ["React Native", "Expo"],
+    frontend: ["React", "Next.js"],
+    backend: ["PHP", "Laravel", "Node.js"],
+    database: ["PostgreSQL", "Supabase"],
+    ai: ["GPT-4", "Cursor", "Claude"],
+  },
 
-  public function getCurrentWork() {
-    return "Building enterprise B2B
-            e-commerce platforms";
-  }
+  currentWork: () => (
+    "Building enterprise B2B platforms"
+    + " & mobile apps with AI assistance"
+  )
 }`}</code></pre>
               </div>
             </div>
@@ -228,17 +235,17 @@ function App() {
           <div className="about-content">
             <div className="about-text">
               <p className="lead">
-                Results-driven Backend Developer with <strong>2+ years of professional experience</strong> specializing in B2B e-commerce solutions and enterprise-level WordPress/WooCommerce development.
+                Results-driven Full-Stack Developer with <strong>3+ years of professional experience</strong> specializing in B2B e-commerce, mobile development, and AI-assisted automation workflows.
               </p>
               <p>
-                I have a proven track record of building and maintaining complex vendor integration systems, processing <strong>thousands of products daily</strong> through automated workflows. My expertise spans API integrations, process automation, and full-stack development.
+                I have a proven track record of building and maintaining complex vendor integration systems, React Native mobile apps, and processing <strong>thousands of products daily</strong> through automated workflows.
               </p>
               <p>
                 Currently working at BrandsGateway, where I architect and maintain an enterprise B2B platform managing <strong>15+ international vendor integrations</strong> across Europe, achieving <strong>99.5% system uptime</strong> and saving <strong>20+ hours/week</strong> through automation.
               </p>
               <div className="about-stats">
                 <div className="stat">
-                  <div className="stat-number">2+</div>
+                  <div className="stat-number">3+</div>
                   <div className="stat-label">Years Experience</div>
                 </div>
                 <div className="stat">
@@ -269,15 +276,16 @@ function App() {
               <div className="timeline-content">
                 <div className="timeline-header">
                   <h3>Full-Stack Developer (Backend Focus)</h3>
-                  <span className="timeline-period">April 2024 - Present</span>
+                  <span className="timeline-period">April 2023 - Present</span>
                 </div>
-                <h4 className="timeline-company">BrandsGateway • Skopje, North Macedonia</h4>
+                <h4 className="timeline-company">BrandsGateway • Remote</h4>
                 <ul className="timeline-achievements">
                   <li>Architected enterprise B2B e-commerce platform managing 15+ international vendor integrations</li>
                   <li>Developed automated product synchronization processing 10,000+ products daily, reducing manual data entry by 95%</li>
                   <li>Built custom WooCommerce REST API integrations for real-time inventory management</li>
+                  <li>Implemented AI-powered product title generation using GPT-4 within Node-RED automation flows</li>
                   <li>Implemented comprehensive logging infrastructure using Graylog, reducing debugging time by 60%</li>
-                  <li>Successfully integrated 8 vendor APIs with different authentication methods (OAuth, API keys, tokens)</li>
+                  <li>Successfully integrated 8+ vendor APIs with different authentication methods (OAuth, API keys, tokens)</li>
                 </ul>
                 <div className="tech-tags">
                   <span>PHP</span>
@@ -287,6 +295,7 @@ function App() {
                   <span>Node-RED</span>
                   <span>MySQL</span>
                   <span>AWS</span>
+                  <span>GPT-4</span>
                 </div>
               </div>
             </div>
@@ -422,7 +431,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p>© 2024 Gligorco Gligorov. Built with React & passion for clean code.</p>
+          <p>© 2025 Gligorco Gligorov. Built with React & passion for clean code.</p>
         </div>
       </footer>
     </div>
