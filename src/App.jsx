@@ -47,6 +47,20 @@ function App() {
   };
 
   const projects = [
+      {
+        title: "VitalLink",
+        role: "Mobile Development · Healthcare",
+        period: "2026",
+        description: "Full-stack React Native healthcare platform connecting patients with doctors through real-time vitals monitoring, medication management, and secure messaging. Features role-based auth — patients see vitals/meds dashboards, doctors manage patient requests and health data.",
+        tech: ["React Native", "Expo SDK 54", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-secure-store"],
+        achievements: [
+          "Role-based auth (patient/doctor) with Supabase RLS and profile-based navigation",
+          "Doctor-patient connection system with request/accept flow and junction table",
+          "Real-time vitals logging, medication tracking, and live in-app chat"
+        ],
+        link: "https://github.com/GligorcoGligorov/VitalLink",
+        github: true
+    },
     {
       title: "MediTrack",
       role: "Mobile Development",
