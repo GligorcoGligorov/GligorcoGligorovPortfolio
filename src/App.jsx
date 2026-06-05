@@ -47,84 +47,100 @@ function App() {
   };
 
   const projects = [
-      {
-        title: "VitalLink",
-        role: "Mobile Development · Healthcare",
-        period: "2026",
-        description: "Full-stack React Native healthcare platform connecting patients with doctors through real-time vitals monitoring, medication management, and secure messaging. Features role-based auth — patients see vitals/meds dashboards, doctors manage patient requests and health data.",
-        tech: ["React Native", "Expo SDK 54", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-secure-store"],
-        achievements: [
-          "Role-based auth (patient/doctor) with Supabase RLS and profile-based navigation",
-          "Doctor-patient connection system with request/accept flow and junction table",
-          "Real-time vitals logging, medication tracking, and live in-app chat"
-        ],
-        link: "https://github.com/GligorcoGligorov/VitalLink",
-        github: true
-    },
-    {
-      title: "MediTrack",
-      role: "Mobile Development",
-      period: "2026",
-      description: "Full-stack healthcare medication reminder app built with React Native and Expo. Features user authentication, medication CRUD, daily taken/skipped tracking, streak counter, push notifications, and dark mode.",
-      tech: ["React Native", "Expo", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-notifications"],
-      achievements: [
-        "Full auth flow with Supabase + SecureStore session management",
-        "Daily medication tracking with streak counter",
-        "Push notifications via expo-notifications"
-      ],
-      link: "https://github.com/GligorcoGligorov/MediTrack",
-      github: true
-    },
-    {
-      title: "BrandsGateway E-commerce Platform",
-      role: "Full-Stack Developer",
-      period: "April 2023 - Present",
-      description: "Enterprise B2B e-commerce platform managing 15+ international vendor integrations across Europe. Automated product synchronization processing 10,000+ products daily.",
-      tech: ["PHP", "Laravel", "WordPress", "WooCommerce", "Node-RED", "MySQL", "AWS", "GPT-4"],
-      achievements: [
-        "95% reduction in manual data entry",
-        "99.5% system uptime",
-        "20+ hours/week saved through automation"
-      ],
-      link: "https://brandsgateway.com"
-    },
-    {
-      title: "ConcertTickets",
-      role: "Full-Stack Development",
-      period: "2023",
-      description: "Event ticketing platform built with Clean Architecture (Onion Architecture), featuring secure payment integration and ticket verification.",
-      tech: [".NET", "ASP.NET Core", "Entity Framework", "SQL Server"],
-      link: "https://github.com/GligorcoGligorov/ConcertTickets",
-      github: true
-    },
-    {
-      title: "TinexChain",
-      role: "Backend Development",
-      period: "2023",
-      description: "Retail inventory management system with procurement tracking, automated reorder calculations, and RESTful APIs for mobile/web integration.",
-      tech: ["Java Spring Boot", "PostgreSQL", "REST API"],
-      link: "https://github.com/GligorcoGligorov/Tinex-Store-Chain",
-      github: true
-    },
-    {
-      title: "BookApp",
-      role: "Full-Stack Development",
-      period: "2023",
-      description: "E-commerce platform for online bookstore with shopping cart, payment processing, user authentication, and role-based access control.",
-      tech: ["Java Spring Boot", "React.js", "PostgreSQL"],
-      link: "https://github.com/GligorcoGligorov/Book-Application",
-      github: true
-    },
-    {
-      title: "UpTime Monitor",
-      role: "Web Development",
-      period: "2023",
-      description: "Service monitoring application for tracking availability and uptime with automated alerts and performance analytics dashboard.",
-      tech: ["Vue.js", "Node.js", "Vercel"],
-      link: "https://uptime-pearl.vercel.app/",
-      live: true
-    }
-  ];
+  {
+    title: "CodeSensei",
+    role: "Full-Stack Development · AI/LLM",
+    period: "2026",
+    description: "AI-powered coding interview prep platform with an in-browser code editor, automated test execution, and a GPT-4 agentic mentor system that delivers progressive hints based on your code and attempt history — without revealing the solution. Built end-to-end from architecture to production deployment.",
+    tech: ["React", "TypeScript", "Node.js", "Express.js", "OpenAI GPT-4", "Supabase", "Monaco Editor", "Tailwind CSS", "Vercel", "Railway"],
+    achievements: [
+      "GPT-4 agentic hint system with prompt versioning, attempt-count logic, and IP-based rate limiting (10 req/hour)",
+      "In-browser Monaco Editor with sandboxed test runner — instant pass/fail results across 8 coding challenges",
+      "Full-stack deployment: React on Vercel, Express API on Railway, PostgreSQL on Supabase"
+    ],
+    link: "https://codesensei-three.vercel.app",
+    live: true,
+    github: false,
+    githubLink: "https://github.com/GligorcoGligorov/CodeSensei"
+  },
+  {
+    title: "VitalLink",
+    role: "Mobile Development · Healthcare",
+    period: "2026",
+    description: "Full-stack React Native healthcare platform connecting patients with doctors through real-time vitals monitoring, medication management, and secure messaging. Features role-based auth — patients see vitals/meds dashboards, doctors manage patient requests and health data.",
+    tech: ["React Native", "Expo SDK 54", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-secure-store"],
+    achievements: [
+      "Role-based auth (patient/doctor) with Supabase RLS and profile-based navigation",
+      "Doctor-patient connection system with request/accept flow and junction table",
+      "Real-time vitals logging, medication tracking, and live in-app chat"
+    ],
+    link: "https://github.com/GligorcoGligorov/VitalLink",
+    github: true
+  },
+  {
+    title: "MediTrack",
+    role: "Mobile Development",
+    period: "2026",
+    description: "Full-stack healthcare medication reminder app built with React Native and Expo. Features user authentication, medication CRUD, daily taken/skipped tracking, streak counter, push notifications, and dark mode.",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Zustand", "React Navigation", "expo-notifications"],
+    achievements: [
+      "Full auth flow with Supabase + SecureStore session management",
+      "Daily medication tracking with streak counter",
+      "Push notifications via expo-notifications"
+    ],
+    link: "https://github.com/GligorcoGligorov/MediTrack",
+    github: true
+  },
+  {
+    title: "BrandsGateway E-commerce Platform",
+    role: "Full-Stack Developer",
+    period: "April 2023 - Present",
+    description: "Enterprise B2B e-commerce platform managing 15+ international vendor integrations across Europe. Automated product synchronization processing 10,000+ products daily.",
+    tech: ["PHP", "Laravel", "WordPress", "WooCommerce", "Node-RED", "MySQL", "AWS", "GPT-4"],
+    achievements: [
+      "95% reduction in manual data entry",
+      "99.5% system uptime",
+      "20+ hours/week saved through automation"
+    ],
+    link: "https://brandsgateway.com"
+  },
+  {
+    title: "ConcertTickets",
+    role: "Full-Stack Development",
+    period: "2023",
+    description: "Event ticketing platform built with Clean Architecture (Onion Architecture), featuring secure payment integration and ticket verification.",
+    tech: [".NET", "ASP.NET Core", "Entity Framework", "SQL Server"],
+    link: "https://github.com/GligorcoGligorov/ConcertTickets",
+    github: true
+  },
+  {
+    title: "TinexChain",
+    role: "Backend Development",
+    period: "2023",
+    description: "Retail inventory management system with procurement tracking, automated reorder calculations, and RESTful APIs for mobile/web integration.",
+    tech: ["Java Spring Boot", "PostgreSQL", "REST API"],
+    link: "https://github.com/GligorcoGligorov/Tinex-Store-Chain",
+    github: true
+  },
+  {
+    title: "BookApp",
+    role: "Full-Stack Development",
+    period: "2023",
+    description: "E-commerce platform for online bookstore with shopping cart, payment processing, user authentication, and role-based access control.",
+    tech: ["Java Spring Boot", "React.js", "PostgreSQL"],
+    link: "https://github.com/GligorcoGligorov/Book-Application",
+    github: true
+  },
+  {
+    title: "UpTime Monitor",
+    role: "Web Development",
+    period: "2023",
+    description: "Service monitoring application for tracking availability and uptime with automated alerts and performance analytics dashboard.",
+    tech: ["Vue.js", "Node.js", "Vercel"],
+    link: "https://uptime-pearl.vercel.app/",
+    live: true
+  }
+];
 
   const skills = {
     "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
@@ -195,8 +211,8 @@ function App() {
             </h1>
             <h2 className="hero-subtitle">Full-Stack Developer & Mobile Engineer</h2>
             <p className="hero-description">
-              I build scalable B2B e-commerce platforms, React Native mobile apps, and AI-powered automation systems.
-              Leveraging modern tools like Cursor and Claude to ship faster without sacrificing quality.
+              I build scalable B2B e-commerce platforms, AI-powered full-stack applications, and React Native mobile apps.
+              Leveraging LLMs and modern AI tools to ship production-grade systems faster without sacrificing quality.
             </p>
             <div className="hero-cta">
               <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
@@ -346,15 +362,27 @@ function App() {
                     <p className="project-role">{project.role} • {project.period}</p>
                   </div>
                   {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="project-link"
-                      aria-label={`View ${project.title}`}
-                    >
-                      {project.github ? '→ GitHub' : project.live ? '→ Live Demo' : '→ Visit'}
-                    </a>
+                    <div style={{ display: 'flex', gap: '0.8rem', flexDirection: 'column', alignItems: 'flex-end' }}>
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="project-link"
+                        aria-label={`View ${project.title}`}
+                      >
+                        {project.github ? '→ GitHub' : project.live ? '→ Live Demo' : '→ Visit'}
+                      </a>
+                      {project.githubLink && (
+                        <a 
+                          href={project.githubLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="project-link"
+                        >
+                          → GitHub
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
                 <p className="project-description">{project.description}</p>
@@ -445,7 +473,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p>© 2025 Gligorco Gligorov. Built with React & passion for clean code.</p>
+          <p>© 2026 Gligorco Gligorov. Built with React & passion for clean code.</p>
         </div>
       </footer>
     </div>
