@@ -47,6 +47,21 @@ function App() {
   };
 
   const projects = [
+    {
+      title: "RentEase",
+      role: "Full-Stack Development · Real-Time",
+      period: "2026",
+      description: "Production-grade property rental platform built from scratch — React + TypeScript frontend, Node.js/Express REST API, PostgreSQL (Supabase), real-time messaging via Socket.io, and full booking lifecycle management. Deployed to Vercel and Railway with CI/CD via GitHub.",
+      tech: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Socket.io", "Zustand", "Tailwind CSS", "Vercel", "Railway"],
+      achievements: [
+        "Real-time bidirectional messaging between renters and owners via Socket.io with room-based architecture",
+        "Booking system with PostgreSQL OVERLAPS date conflict detection and automatic price calculation",
+        "JWT auth with access + refresh token rotation, bcrypt hashing, and rate limiting on auth routes"
+      ],
+      link: "https://assess-xi.vercel.app",
+      live: true,
+      githubLink: "https://github.com/GligorcoGligorov/assess"
+  },
   {
     title: "CodeSensei",
     role: "Full-Stack Development · AI/LLM",
