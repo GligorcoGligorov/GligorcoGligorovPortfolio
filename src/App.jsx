@@ -158,12 +158,13 @@ function App() {
 ];
 
   const skills = {
-    "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
-    "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-    "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js"],
-    "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase"],
-    "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Cursor", "Claude Code", "AWS"],
-    "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
+  "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
+  "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
+  "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API"],
+  "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase"],
+  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Cursor", "Claude Code", "AWS", "Docker"],
+  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD"],
+  "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
   };
 
   return (
