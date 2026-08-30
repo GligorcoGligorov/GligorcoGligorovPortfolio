@@ -48,6 +48,20 @@ function App() {
 
   const projects = [
     {
+      title: "FitCheck",
+      role: "Full-Stack Development · AI/LLM",
+      period: "2026",
+      description: "Production multilingual AI stylist — photograph the clothes you already own, a vision model tags and catalogues each piece, and the stylist then builds complete outfits drawn only from your own wardrobe, each one scored and explained. Live in English, German and Macedonian, with grammatically correct garment names in all three.",
+      tech: ["Next.js 16", "React 19", "TypeScript", "Prisma 7", "PostgreSQL (Neon)", "Vercel AI SDK", "Groq", "Vercel Blob", "Tailwind CSS", "Zod", "sharp"],
+      achievements: [
+        "Two-pass AI architecture cutting inference cost ~10× — garments are tagged once at upload, and the stylist then reasons over a compact text catalogue instead of images",
+        "Closed enum vocabulary eliminates LLM hallucination in garment naming, with adjective–noun gender agreement for German and Macedonian verified across 5,673 combinations",
+        "Rolling-window quota with pseudonymous per-network rate limiting — IP addresses stored only as keyed SHA-256 digests, never raw"
+      ],
+      link: "https://thefitcheck.vercel.app",
+      live: true
+  },
+    {
       title: "RentEase",
       role: "Full-Stack Development · Real-Time",
       period: "2026",
@@ -161,8 +175,8 @@ function App() {
   "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
   "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
   "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API"],
-  "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase"],
-  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Cursor", "Claude Code", "AWS", "Docker"],
+  "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase", "Prisma", "Neon"],
+  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Vercel AI SDK", "Groq", "Cursor", "Claude Code", "AWS", "Docker"],
   "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD"],
   "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
   };
