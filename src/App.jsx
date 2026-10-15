@@ -48,6 +48,20 @@ function App() {
 
   const projects = [
     {
+      title: "Pact",
+      role: "Mobile + Full-Stack · AI/LLM",
+      period: "2026",
+      description: "Habit app for small crews of friends — up to eight people pick one habit, a fixed run of days and a stake (\"loser buys the coffees\"). Everyone checks in daily with a photo of that day's challenge, an AI judge flags anything odd, and a day only counts when the whole crew is in. At the end Pact reveals the results, hands out awards and names who pays. Expo app plus a Next.js API and public web pages, built in a 2-week trial.",
+      tech: ["Expo SDK 55", "React Native", "TypeScript", "Next.js 15", "Prisma", "Supabase", "Zod", "TanStack Query", "NativeWind", "Groq", "Gemini", "PostHog", "Sentry"],
+      achievements: [
+        "One data path — the app never touches tables; every read and write goes through a Next.js API validated on both sides by a shared Zod contract in an npm-workspaces monorepo",
+        "Non-blocking AI judge — check-ins return instantly as pending while Groq (Gemini fallback) writes the verdict in the background; it advises and never fails anyone",
+        "Timezone-aware, DST-safe day math on the server for chains, streaks, awards and tie handling, pinned by tests, plus server-rendered share cards and OG link previews"
+      ],
+      link: "https://github.com/GligorcoGligorov/Pact",
+      github: true
+    },
+    {
       title: "FitCheck",
       role: "Full-Stack Development · AI/LLM",
       period: "2026",
@@ -172,12 +186,12 @@ function App() {
 ];
 
   const skills = {
-  "Mobile": ["React Native", "Expo", "TypeScript", "React Navigation", "Zustand", "NativeWind"],
+  "Mobile": ["React Native", "Expo", "Expo Router", "TypeScript", "React Navigation", "Zustand", "TanStack Query", "NativeWind"],
   "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
-  "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API"],
+  "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API", "Zod"],
   "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase", "Prisma", "Neon"],
-  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Vercel AI SDK", "Groq", "Cursor", "Claude Code", "AWS", "Docker"],
-  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD"],
+  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Vercel AI SDK", "Groq", "Gemini", "Cursor", "Claude Code", "AWS", "Docker"],
+  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD", "Sentry", "PostHog", "Jest", "Monorepos"],
   "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
   };
 
