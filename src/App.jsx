@@ -48,6 +48,20 @@ function App() {
 
   const projects = [
     {
+      title: "Signal",
+      role: "Full-Stack SaaS · AI/LLM",
+      period: "2026",
+      description: "AI buyer-intent lead discovery for founders — paste your website and Signal finds people publicly asking for a product like yours across Hacker News, Bluesky, GitHub and Stack Overflow, scores their buying intent with an LLM and drafts a reply. Hot leads land in a pipeline and arrive as Telegram alerts; Signal never posts on the user's behalf.",
+      tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Gemini API", "Node.js", "GitHub Actions", "Vitest", "PGlite", "Vercel"],
+      achievements: [
+        "TypeScript monorepo (web app, ingestion worker, shared scoring engine) on Supabase Postgres with row-level security and column-level grants, 85+ automated tests and hourly serverless scans on GitHub Actions",
+        "Cost-bounded AI pipeline — one fetch per source shared by all customers, intent prefiltering with bot and noise filters, and batched Gemini scoring with structured output and a heuristic fallback so no single failure stops a run",
+        "Hardened for production: global and per-user daily LLM caps, a rate-limited website reader with SSRF protection, an open-redirect fix and key rotation; seller and competitor posts filtered by three rule layers with regression tests"
+      ],
+      link: "https://signal-blond-phi-13.vercel.app",
+      live: true
+    },
+    {
       title: "Pact",
       role: "Mobile + Full-Stack · AI/LLM",
       period: "2026",
@@ -191,7 +205,7 @@ function App() {
   "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API", "Zod"],
   "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase", "Prisma", "Neon"],
   "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Vercel AI SDK", "Groq", "Gemini", "Cursor", "Claude Code", "AWS", "Docker"],
-  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD", "Sentry", "PostHog", "Jest", "Monorepos"],
+  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD", "GitHub Actions", "Sentry", "PostHog", "Jest", "Vitest", "Monorepos"],
   "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
   };
 
