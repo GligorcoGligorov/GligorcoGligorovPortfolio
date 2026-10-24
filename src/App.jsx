@@ -48,6 +48,29 @@ function App() {
 
   const projects = [
     {
+      title: "Inspekt",
+      role: "Backend · Security · Open Source",
+      period: "2026",
+      featured: true,
+      description: "Email threat-analysis service — POST a raw email and Inspekt queues it on Redis Streams, Go workers parse the MIME, extract artifacts and check SPF/DKIM/DMARC, then 29 signals produce a score, a verdict and the evidence behind it. Results land in MariaDB with Prometheus metrics and a Grafana dashboard. Ships with a demo, evaluation reports and design notes; CI is green on every commit.",
+      pipeline: [
+        { name: "Raw email", detail: "POST /v1/scans" },
+        { name: "Redis Streams", detail: "queue · watchdog · DLQ" },
+        { name: "Go workers", detail: "MIME · artifacts · auth" },
+        { name: "29 signals", detail: "score · verdict · evidence" },
+        { name: "MariaDB", detail: "results · Grafana" }
+      ],
+      tech: ["Go", "Python", "Redis Streams", "MariaDB", "Docker Compose", "Prometheus", "Grafana", "GitHub Actions", "Groq"],
+      achievements: [
+        "Fast and resilient — ~1,000 emails/s with p95 64 ms on a laptop, using Redis Streams consumer groups, a watchdog, dead-letter queue, idempotent writes and backpressure",
+        "Detection measured, not assumed — on 6,202 public emails with an 80/20 dev/holdout split, holdout phishing recall rose from 20% to 39% at 96% precision, with false positives unchanged at 0.88%",
+        "Found by testing — load and evaluation runs exposed four real bugs, each fixed with a regression test, including a Redis 7 Lua script that ignored maxmemory",
+        "Safe LLM use — an optional Groq model reviews only borderline mail, can only add points, sees a data-minimised excerpt and runs under a shared cost cap"
+      ],
+      link: "https://github.com/GligorcoGligorov/inspekt",
+      github: true
+    },
+    {
       title: "Signal",
       role: "Full-Stack SaaS · AI/LLM",
       period: "2026",
@@ -200,14 +223,24 @@ function App() {
 ];
 
   const skills = {
-  "Mobile": ["React Native", "Expo", "Expo Router", "TypeScript", "React Navigation", "Zustand", "TanStack Query", "NativeWind"],
-  "Frontend": ["React.js", "Next.js", "Vue.js", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
-  "Backend": ["PHP", "Laravel", "Java", "Spring Boot", ".NET", "Node.js", "Express.js", "Socket.io", "REST API", "Zod"],
-  "Databases": ["MySQL", "PostgreSQL", "SQLite", "Supabase", "Prisma", "Neon"],
-  "Automation & AI": ["Node-RED", "n8n", "GPT-4", "Vercel AI SDK", "Groq", "Gemini", "Cursor", "Claude Code", "AWS", "Docker"],
-  "DevOps & Deploy": ["Vercel", "Railway", "Git", "GitHub", "Graylog", "CI/CD", "GitHub Actions", "Sentry", "PostHog", "Jest", "Vitest", "Monorepos"],
-  "E-commerce": ["WordPress", "WooCommerce", "Shopify", "OpenCart", "Mirakl"],
+  "Languages": ["TypeScript", "Go", "Python", "JavaScript", "PHP", "Java", "C#", "SQL"],
+  "Backend": ["Node.js", "Express", "Laravel", "Spring Boot", "ASP.NET Core", "Redis Streams", "Queues & workers", "REST", "Socket.io", "Node-RED"],
+  "AI & LLM": ["Agentic pipelines", "GPT-4 / OpenAI", "Gemini", "Groq", "Vercel AI SDK", "Structured output", "RAG", "Evaluation", "Claude Code", "Cursor"],
+  "Data": ["PostgreSQL", "MySQL / MariaDB", "SQLite", "SQL Server", "Supabase (RLS, Realtime)", "Prisma", "Neon"],
+  "Frontend & Mobile": ["React", "Next.js", "React Native", "Expo", "Vue.js", "Tailwind CSS", "Zustand", "TanStack Query"],
+  "Cloud & Quality": ["AWS (S3, Lambda)", "Docker", "GitHub Actions", "Linux", "Prometheus", "Grafana", "Graylog", "Sentry", "Vitest / Jest", "Vercel"],
+  "Security": ["SPF / DKIM / DMARC", "MIME parsing", "SSRF hardening", "Row-level security", "JWT rotation", "Fuzz testing"],
+  "E-commerce": ["WooCommerce", "WordPress", "Shopify", "OpenCart", "Mirakl"],
   };
+
+  const strengths = [
+    { title: "Production backend", text: "Node.js, TypeScript, Go, PHP/Laravel, Java Spring Boot. Queues, workers, REST APIs and 15+ third-party integrations (OAuth, API keys, tokens)." },
+    { title: "Reliability by design", text: "Watchdogs, dead-letter queues, idempotent writes, backpressure, versioned rollback. 99.5% uptime; Graylog cut debugging time by 60%." },
+    { title: "Applied AI & LLMs", text: "GPT-4, Gemini, Groq. Structured output, closed vocabularies, cost caps, fallbacks, and dev/holdout evaluation instead of guesswork." },
+    { title: "Security mindset", text: "SPF/DKIM/DMARC, hostile-input parsing, SSRF hardening, row-level security, token rotation, data minimisation, fuzz testing." },
+    { title: "Full product ownership", text: "Next.js, React, React Native/Expo, PostgreSQL, Supabase. From schema and API to UI, CI/CD, analytics and monitoring." },
+    { title: "Healthcare domain", text: "Remote patient monitoring (vitals, medications, doctor-patient chat) and medication reminders, with RLS so each doctor sees only their patients." }
+  ];
 
   return (
     <div className={`app ${isLoaded ? 'loaded' : ''}`}>
@@ -267,18 +300,18 @@ function App() {
               <span className="title-line">Hi, I'm</span>
               <span className="title-name">Gligorco Gligorov</span>
             </h1>
-            <h2 className="hero-subtitle">Full-Stack Developer & Mobile Engineer</h2>
+            <h2 className="hero-subtitle">Backend & AI Engineer · Production Pipelines · Full-Stack & Mobile</h2>
             <p className="hero-description">
-              I build scalable B2B e-commerce platforms, AI-powered full-stack applications, and React Native mobile apps.
-              Leveraging LLMs and modern AI tools to ship production-grade systems faster without sacrificing quality.
+              I build systems that hold up in production — an agentic GPT-4 pipeline processing 10,000+ products a day at 99.5% uptime,
+              an open-source email threat-analysis service in Go, and AI products on web and mobile. Open to remote, hybrid or relocation.
             </p>
             <div className="hero-cta">
               <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
                 View My Work
               </button>
-              <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
-                Get In Touch
-              </button>
+              <a href="/Gligorco_Gligorov_CV.pdf" download className="btn btn-secondary">
+                Download CV
+              </a>
             </div>
           </div>
           <div className="hero-visual">
@@ -294,20 +327,20 @@ function App() {
               <div className="window-content">
                 <pre><code>{`const developer = {
   name: "Gligorco Gligorov",
-  role: "Full-Stack Developer",
-  location: "Skopje, Macedonia",
+  role: "Backend & AI Engineer",
+  location: "Skopje · remote / hybrid",
 
   stack: {
-    mobile: ["React Native", "Expo"],
-    frontend: ["React", "Next.js"],
-    backend: ["PHP", "Laravel", "Node.js"],
-    database: ["PostgreSQL", "Supabase"],
-    ai: ["GPT-4", "Cursor", "Claude"],
+    backend: ["Node.js", "Go", "Laravel"],
+    queues: ["Redis Streams", "workers"],
+    ai: ["GPT-4", "Gemini", "Groq"],
+    data: ["PostgreSQL", "MariaDB"],
+    product: ["Next.js", "React Native"],
   },
 
   currentWork: () => (
-    "Building enterprise B2B platforms"
-    + " & mobile apps with AI assistance"
+    "Owning a production AI pipeline"
+    + " — 10,000+ products/day, 99.5% up"
   )
 }`}</code></pre>
               </div>
@@ -323,31 +356,46 @@ function App() {
           <div className="about-content">
             <div className="about-text">
               <p className="lead">
-                Results-driven Full-Stack Developer with <strong>3+ years of professional experience</strong> specializing in B2B e-commerce, mobile development, and AI-assisted automation workflows.
+                Backend engineer who builds systems that hold up in production. For <strong>3.5 years</strong> I have been the <strong>sole backend engineer at BrandsGateway</strong>, a B2B luxury fashion marketplace.
               </p>
               <p>
-                I have a proven track record of building and maintaining complex vendor integration systems, React Native mobile apps, and processing <strong>thousands of products daily</strong> through automated workflows.
+                There I designed and own an <strong>agentic GPT-4 pipeline</strong> that processes <strong>10,000+ untrusted vendor records a day</strong> across <strong>15+ integrations</strong>, with stuck-job recovery, per-item state isolation, versioned rollback and full observability.
               </p>
               <p>
-                Currently working at BrandsGateway, where I architect and maintain an enterprise B2B platform managing <strong>15+ international vendor integrations</strong> across Europe, achieving <strong>99.5% system uptime</strong> and saving <strong>20+ hours/week</strong> through automation.
+                In 2026 I shipped, on my own, an open-source <strong>email threat-analysis service in Go and Python</strong>, an AI lead-discovery SaaS, an AI stylist, a social habit app and <strong>two healthcare apps</strong>. I treat cost, security and reliability as features, and work AI-native with Claude Code and Cursor while owning every line.
               </p>
               <div className="about-stats">
                 <div className="stat">
-                  <div className="stat-number">3+</div>
-                  <div className="stat-label">Years Experience</div>
-                </div>
-                <div className="stat">
-                  <div className="stat-number">15+</div>
-                  <div className="stat-label">Vendor Integrations</div>
+                  <div className="stat-number">3.5 yrs</div>
+                  <div className="stat-label">Sole backend engineer</div>
                 </div>
                 <div className="stat">
                   <div className="stat-number">10K+</div>
-                  <div className="stat-label">Products Processed Daily</div>
+                  <div className="stat-label">Products a day through my AI pipeline</div>
                 </div>
                 <div className="stat">
                   <div className="stat-number">99.5%</div>
-                  <div className="stat-label">System Uptime</div>
+                  <div className="stat-label">Uptime with self-healing</div>
                 </div>
+                <div className="stat">
+                  <div className="stat-number">20+ hrs</div>
+                  <div className="stat-label">Saved weekly · 95% less manual entry</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">8</div>
+                  <div className="stat-label">Products shipped in 2026</div>
+                </div>
+              </div>
+            </div>
+            <div className="strengths">
+              <h3 className="subsection-title">What I bring</h3>
+              <div className="skills-grid">
+                {strengths.map((item) => (
+                  <div key={item.title} className="skill-category">
+                    <h4 className="skill-category-title">✓ {item.title}</h4>
+                    <p className="strength-text">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -363,27 +411,30 @@ function App() {
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <h3>Full-Stack Developer (Backend Focus)</h3>
+                  <h3>Senior Software Engineer</h3>
                   <span className="timeline-period">April 2023 - Present</span>
                 </div>
                 <h4 className="timeline-company">BrandsGateway • Remote</h4>
+                <p className="timeline-summary">Sole backend engineer for a B2B luxury fashion e-commerce marketplace serving retailers across Europe.</p>
                 <ul className="timeline-achievements">
-                  <li>Architected enterprise B2B e-commerce platform managing 15+ international vendor integrations</li>
-                  <li>Developed automated product synchronization processing 10,000+ products daily, reducing manual data entry by 95%</li>
-                  <li>Built custom WooCommerce REST API integrations for real-time inventory management</li>
-                  <li>Implemented AI-powered product title generation using GPT-4 within Node-RED automation flows</li>
-                  <li>Implemented comprehensive logging infrastructure using Graylog, reducing debugging time by 60%</li>
-                  <li>Successfully integrated 8+ vendor APIs with different authentication methods (OAuth, API keys, tokens)</li>
+                  <li><strong>AI content pipeline.</strong> Designed and run an agentic GPT-4 pipeline in Node-RED that writes titles and descriptions for 10,000+ SKUs, with prompt versioning, category-aware classification and automated quality control.</li>
+                  <li><strong>Reliability by design.</strong> Built a self-healing watchdog that recovers stuck jobs, per-product keyed state isolation and lock/completion tracking, keeping the platform at 99.5% uptime.</li>
+                  <li><strong>Vendor platform.</strong> Architected the B2B platform behind 15+ international vendor integrations, including 8+ vendor APIs with OAuth, API-key and token auth, plus WooCommerce REST integrations for real-time inventory and orders.</li>
+                  <li><strong>Automation at scale.</strong> Replaced manual imports with automated sync for 10,000+ products a day, cutting manual data entry by 95%; every feed passes schema-enforced validation with self-healing fallbacks.</li>
+                  <li><strong>Safe rollback & observability.</strong> S3-backed version history with SQLite tracking (~2,000 records/s) reverts a bad import in minutes; Graylog across the platform cut debugging time by 60%, with Slack alerts for failures.</li>
                 </ul>
                 <div className="tech-tags">
+                  <span>Node.js</span>
+                  <span>Node-RED</span>
                   <span>PHP</span>
                   <span>Laravel</span>
-                  <span>WordPress</span>
-                  <span>WooCommerce</span>
-                  <span>Node-RED</span>
                   <span>MySQL</span>
-                  <span>AWS</span>
+                  <span>PostgreSQL</span>
+                  <span>SQLite</span>
+                  <span>AWS S3</span>
+                  <span>Graylog</span>
                   <span>GPT-4</span>
+                  <span>WooCommerce</span>
                 </div>
               </div>
             </div>
@@ -392,7 +443,7 @@ function App() {
               <div className="timeline-marker"></div>
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <h3>Teaching Assistant</h3>
+                  <h3>Laboratory Teaching Assistant</h3>
                   <span className="timeline-period">October 2023 - October 2025</span>
                 </div>
                 <h4 className="timeline-company">Faculty of Computer Science and Engineering (FINKI) • Skopje</h4>
@@ -404,6 +455,29 @@ function App() {
               </div>
             </div>
           </div>
+
+          <div className="credentials">
+            <div className="skill-category">
+              <h3 className="skill-category-title">Education</h3>
+              <p className="credential-main">BSc Information Science, Applied IT</p>
+              <p className="strength-text">FINKI, UKIM Skopje · 2020 – 2024 · GPA 8.68 / 10</p>
+              <p className="credential-main">Certifications</p>
+              <p className="strength-text">8x Playmakers Network · 2026<br />Vue.js, EESTEC Academy · 2021</p>
+              <p className="credential-main">Languages</p>
+              <p className="strength-text">Macedonian (native) · English (professional)</p>
+            </div>
+            <div className="skill-category">
+              <h3 className="skill-category-title">Reference</h3>
+              <blockquote className="reference-quote">
+                "One of the most capable, reliable and genuinely driven engineers I have had on my team."
+              </blockquote>
+              <p className="credential-main">Trajce (TJ) Kralev</p>
+              <p className="strength-text">Fractional CTO, BrandsGateway</p>
+              <p className="strength-text reference-note">
+                Systems thinker: failure modes and scale before the first line. AI-augmented, fully accountable, fast to learn new domains, and comfortable with clients, vendors and cross-team work.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -413,7 +487,7 @@ function App() {
           <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project-card" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className={`project-card ${project.featured ? 'project-featured' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="project-header">
                   <div>
                     <h3 className="project-title">{project.title}</h3>
@@ -444,6 +518,16 @@ function App() {
                   )}
                 </div>
                 <p className="project-description">{project.description}</p>
+                {project.pipeline && (
+                  <div className="project-pipeline">
+                    {project.pipeline.map((step) => (
+                      <div key={step.name} className="pipeline-step">
+                        <div className="pipeline-name">{step.name}</div>
+                        <div className="pipeline-detail">{step.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {project.achievements && (
                   <ul className="project-achievements">
                     {project.achievements.map((achievement, i) => (

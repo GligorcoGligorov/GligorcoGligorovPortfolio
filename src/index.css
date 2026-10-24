@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
 }
 
 * {
